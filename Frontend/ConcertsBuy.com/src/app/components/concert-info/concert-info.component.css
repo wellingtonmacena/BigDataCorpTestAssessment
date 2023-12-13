@@ -1,0 +1,67 @@
+.home-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #d6feff;
+}
+
+.home-container h1 {
+  margin-bottom: 0.5em;
+}
+
+/* artist styles */
+.concerts-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.concert {
+  width: 85%;
+  margin-bottom: 1.5em;
+  text-align: center;
+  align-self: center;
+  border: 0.1em solid black;
+  max-width: 80%;
+  box-shadow: 0.3em 0.5em;
+}
+
+.concert img {
+  width: 100%;
+  padding: 1em;
+  transition: transform 0.2s; /* Animation */
+}
+
+.concert img:hover {
+  transform: scale(
+    1.1
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.concert-information-container {
+  margin-top: 1em;
+  transition: transform 0.2s; /* Animation */
+}
+
+.concert-information-container:hover {
+  transform: scale(1.2); /* Animation */
+}
+
+
+.concert-image {
+  cursor: pointer;
+}
+
+.concert h2{
+  margin-bottom: 1.2em;
+}
+
+.concert p {
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  justify-content: center;
+}

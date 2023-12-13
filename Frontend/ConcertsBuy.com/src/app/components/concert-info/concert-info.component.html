@@ -1,0 +1,24 @@
+<div class="home-container">
+  <h1>Concert Page</h1>
+
+  <div class="concerts-container">
+    <div class="concert">
+      <!-- <img class="concert-image" src="{{ concert.imageCover }}" alt="{{ concert.name }}" (click)="redirect(concert)" /> -->
+      <div class="concert-information-container">
+        <h2>{{ concert.name }}</h2>
+        <p>Date: {{ parseDate(concert.date)}}</p>
+        <p>Location: {{ concert.location}}</p>
+        <p>Provided by: {{ concert.idOwner}}</p>
+      </div>
+    </div>
+
+    <div class="tickets-available-container">
+      <div *ngFor="let section of concert.sections ">
+        <app-concert-section [section]="section"></app-concert-section>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>

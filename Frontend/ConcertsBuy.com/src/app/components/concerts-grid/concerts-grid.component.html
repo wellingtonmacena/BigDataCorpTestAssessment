@@ -1,0 +1,20 @@
+<app-search-box [objectType]="objectType"></app-search-box>
+
+
+<div class="concerts-container" *ngIf="concerts.length > 0; else noConcerts">
+
+  <div class="concerts-container">
+    <div class="concert" *ngFor="let concert of concerts; index as i">
+      <img class="concert-image" src="{{ concert.imageCover }}" alt="{{ concert.name }}" (click)="redirect(concert)" />
+      <div class="concert-information-container">
+        <h2>{{ i + 1 }}º {{ concert.name }}</h2>
+        <p>Date: {{  parseDate(concert.date)}}</p>
+        <p>Location: {{ concert.location}}</p>
+        <p>Provided by: {{ concert.idOwner}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #noConcerts>
+  <h1>You must be logged in to access your data</h1>
+</ng-template>
