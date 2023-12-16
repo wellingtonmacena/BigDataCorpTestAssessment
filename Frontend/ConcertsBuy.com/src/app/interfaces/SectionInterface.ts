@@ -5,6 +5,4 @@ export interface SectionInterface {
   availableTicketsCount: number;
   rowsCount: number;
   collumnsCount: number;
-  collumns: number[];
-  rows: number[];
 }

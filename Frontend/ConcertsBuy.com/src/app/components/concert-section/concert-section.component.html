@@ -1,16 +1,19 @@
-<table class="table">
+
+<p style="display: flex; justify-self: center; justify-content: center;margin-bottom: 20px;" >{{section.name}}</p>
+<table>
   <thead>
-    <tr >
-      <td></td>
-      <td *ngFor="let item of section.collumns; index as i" >{{item}}</td>
+
+    <tr>
+      <th style="padding: 4px;"></th>
+      <th style="padding: 4px;" *ngFor="let x of section.collumnsCount| times">{{ x }}</th>
     </tr>
   </thead>
-
-
-
   <tbody>
-    <tr>
-      
+    <tr style="padding: 4px;" *ngFor="let y of section.rowsCount|times">
+      <th style="padding: 4px;" scope="row">{{ y }}</th>
+      <td style="padding: 4px;" *ngFor="let x of section.collumnsCount|times">
+        <input style="padding: 4px; width: 25px; height: 25px; " type="checkbox" checked>
+      </td>
     </tr>
   </tbody>
 </table>

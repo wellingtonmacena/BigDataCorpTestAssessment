@@ -1,4 +1,4 @@
-import {Section} from '../../models/Section'
+import { Section } from '../../models/Section';
 import { ConcertsService } from './../../services/concerts-service';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,35 +11,35 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [ConcertSectionComponent, CommonModule],
   templateUrl: './concert-info.component.html',
-  styleUrl: './concert-info.component.css'
+  styleUrl: './concert-info.component.css',
 })
 export class ConcertInfoComponent {
   concert!: Concert;
 
   constructor(
-    private concertsService:ConcertsService ,
+    private concertsService: ConcertsService,
     private route: ActivatedRoute,
     private router: Router
-  ) {
+  ) {}
 
-  }
-
-  async ngOnInit(){
+  async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
-    this.concert  = await  this.concertsService
-     .getConcert(id)
+    this.concert = await this.concertsService.getConcert(id);
 
+    let sec: Section[] = [];
 
-     let sec: Section[] = [];
+    for (let index = 0; index < 3; index++) {
+     // let randomNumberCollumn = Math.ceil(Math.random() * 11) +4;
+    //  let randomNumberRow = Math.ceil(Math.random() * 11)+4;
+      let randomNumberCollumn = 15
+      let randomNumberRow = 15;
+      sec.push(
+        new Section(`Section ${sec.length + 1}`, 'ww', 4, randomNumberRow, randomNumberCollumn)
+      );
+    }
 
-     for (let index = 0; index < 3; index++) {
-
-      sec.push(new Section( `Section ${sec.length +1}`,'ww', 4, 5,5  ))
-
-     }
-
-     this.concert.sections = sec;
-     console.log(  this.concert.sections)
+    this.concert.sections = sec;
+    console.log(this.concert.sections);
   }
 
   parseDate(date: string) {
