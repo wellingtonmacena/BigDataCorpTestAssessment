@@ -1,4 +1,4 @@
-import { SectionInterface } from "./SectionInterface"
+import { Section } from './../models/Section';
 
 export interface Concert {
   name: string
@@ -8,5 +8,6 @@ export interface Concert {
   idOwner:string
   imageCover:string
   location:string
-  sections:SectionInterface[]
+  sections:Section[]
+  sectionCount:number
 }

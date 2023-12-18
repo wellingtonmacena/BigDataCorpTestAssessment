@@ -1,8 +1,8 @@
-import { SectionInterface } from '../interfaces/SectionInterface';
+import { Ticket } from "./Ticket";
 
-export class Section implements SectionInterface {
-  public availableMaximumCount: number;
-
+export class Section   {
+  public availableMaximumCount?: number = 0;
+  public tickets!:Ticket[]
   constructor(
     public name: string,
     public id: string,
@@ -11,6 +11,9 @@ export class Section implements SectionInterface {
     public collumnsCount: number,
 
   ) {
-    this.availableMaximumCount = rowsCount * collumnsCount;
+    this.availableMaximumCount = rowsCount! * collumnsCount!;
+    this.tickets  =[];
   }
+
+
 }

@@ -51,12 +51,11 @@
   transform: scale(1.2); /* Animation */
 }
 
-
 .concert-image {
   cursor: pointer;
 }
 
-.concert h2{
+.concert h2 {
   margin-bottom: 1.2em;
 }
 
@@ -64,4 +63,19 @@
   margin-bottom: 0.5em;
   font-size: 1.5em;
   justify-content: center;
+}
+
+.tickets-available-container {
+  margin-top: 30px;
+  margin-left: -70px;
+  justify-content: space-between;
+  max-width: 80%;
+}
+
+.screen-layout {
+  border: 2px black solid;
+  width: 75%;
+  height: 80px;
+  margin-top: 10px;
+  background-color: #665e5e;
 }

@@ -1,18 +1,32 @@
-
-<p style="display: flex; justify-self: center; justify-content: center;margin-bottom: 20px;" >{{section.name}}</p>
+<p class="section-name">{{section.name}}</p>
 <table>
   <thead>
-
     <tr>
-      <th style="padding: 4px;"></th>
-      <th style="padding: 4px;" *ngFor="let x of section.collumnsCount| times">{{ x }}</th>
+      <th></th>
+      <th *ngFor="let x of section.collumnsCount| times">{{ x }}</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="padding: 4px;" *ngFor="let y of section.rowsCount|times">
-      <th style="padding: 4px;" scope="row">{{ y }}</th>
-      <td style="padding: 4px;" *ngFor="let x of section.collumnsCount|times">
-        <input style="padding: 4px; width: 25px; height: 25px; " type="checkbox" checked>
+    <tr *ngFor="let y of section.rowsCount| chars">
+      <th scope="row">{{ y }}</th>
+      <td *ngFor="let x of section.tickets;  index as iy">
+
+        <div *ngIf=" iy < section.collumnsCount ">
+           {{x.seatCode}}
+          <div *ngIf="x.isSold ==false ;else noMoment">
+
+            <div class="ticket-seat-available">
+              <img class="ticket-seat" src="../../../assets/filled-car-seat.png" alt="car-seat">
+            </div>
+
+          </div>
+
+          <ng-template #noMoment>
+            <div class="ticket-seat-unavailable">
+              <img class="ticket-seat" src="../../../assets/filled-car-seat.png" alt="car-seat">
+            </div>
+          </ng-template>
+        </div>
       </td>
     </tr>
   </tbody>

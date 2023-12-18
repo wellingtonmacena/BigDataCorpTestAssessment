@@ -12,17 +12,10 @@
       </div>
     </div>
 
-    <div style="border: 2px black solid; width: 75%;  height: 80px;margin-top: 10px;
-
-    background-color: #665e5e;
-   "></div>
-    <div class="tickets-available-container" style=" margin-top: 30px; justify-content: space-between; max-width: 80%;">
-
+    <div class="screen-layout"></div>
+    <div class="tickets-available-container">
       <div *ngFor="let section of concert.sections ">
-
-
-        <app-concert-section style="margin: 20px;" [section]="section"></app-concert-section>
-
+        <app-concert-section [section]="section"></app-concert-section>
 
       </div>
     </div>
