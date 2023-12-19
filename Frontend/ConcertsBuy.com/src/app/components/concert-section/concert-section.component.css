@@ -11,23 +11,49 @@ td {
   padding: 0.5em;
 }
 
-.ticket-seat-available{
-  background-color: lightgreen;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.ticket-seat-unavailable{
-  background-color: lightcoral;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.ticket-seat {
+.collumn-name {
   padding: 0.5em;
   width: 2.5em;
-  height:  2.5em;
+  height: 2.5em;
+}
+
+.ticket-seat-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 0.5em;
   cursor: pointer;
+  border: 0.1em solid transparent;
+}
+
+.ticket-seat-available {
+  background-color: lightgreen;
+}
+
+.ticket-seat-unavailable {
+  background-color: lightcoral;
+}
+
+.ticket-seat-unavailable {
+  background-color: lightcoral;
+}
+
+.ticket-seat-in-hold {
+  background-color: rgb(242, 245, 89);
+  border: 0.1em solid black;
+}
+
+.ticket-seat-image {
+  padding: 0.5em;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.row-name {
+  vertical-align: bottom;
+}
+
+.seat-name {
+  text-align: center;
+  margin-bottom: 0.5em;
 }

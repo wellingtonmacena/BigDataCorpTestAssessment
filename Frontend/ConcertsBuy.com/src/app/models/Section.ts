@@ -1,19 +1,19 @@
 import { Ticket } from "./Ticket";
 
 export class Section   {
-  public availableMaximumCount?: number = 0;
-  public tickets!:Ticket[]
+  public availableMaximumCount: number;
+  public rowsCount: number;
+  public collumnsCount: number;
+  public availableTicketsCount: number;
   constructor(
     public name: string,
     public id: string,
-    public availableTicketsCount: number,
-    public rowsCount: number,
-    public collumnsCount: number,
+    public tickets:Ticket[]
 
   ) {
-    this.availableMaximumCount = rowsCount! * collumnsCount!;
-    this.tickets  =[];
+    this.availableMaximumCount = 0;
+    this.rowsCount = 0;
+    this.collumnsCount = 0;
+    this.availableTicketsCount = 0;
   }
-
-
 }

@@ -74,8 +74,9 @@
 
 .screen-layout {
   border: 2px black solid;
-  width: 75%;
-  height: 80px;
-  margin-top: 10px;
+  width: 45.0em;
+  height: 5.0em;
+  min-width: 45.0em;
+  margin-top: 1.0em;
   background-color: #665e5e;
 }

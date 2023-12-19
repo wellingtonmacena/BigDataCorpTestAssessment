@@ -1,32 +1,29 @@
-<p class="section-name">{{section.name}}</p>
+<p class="section-name">{{section.name.toUpperCase()}}</p>
 <table>
   <thead>
     <tr>
       <th></th>
-      <th *ngFor="let x of section.collumnsCount| times">{{ x }}</th>
+      <th *ngFor="let x of section.collumnsCount| times" class="collumn-name" >{{ x }}</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let y of section.rowsCount| chars">
-      <th scope="row">{{ y }}</th>
-      <td *ngFor="let x of section.tickets;  index as iy">
+    <tr *ngFor="let row of this.rows;index as i">
+      <th class="row-name" scope="row">{{this.chars[i].toLocaleUpperCase()}}</th>
+      <td *ngFor="let ticket of row;  index as iy">
 
-        <div *ngIf=" iy < section.collumnsCount ">
-           {{x.seatCode}}
-          <div *ngIf="x.isSold ==false ;else noMoment">
-
-            <div class="ticket-seat-available">
-              <img class="ticket-seat" src="../../../assets/filled-car-seat.png" alt="car-seat">
-            </div>
-
+        <p class="seat-name">{{ticket.seatCode}}</p>
+        <div *ngIf="ticket.isSold ==false ;else ticketUnavailable">
+          <div class="ticket-seat-available ticket-seat-container" #ticketDiv (click)="saveTicket(ticketDiv)"  (click)="addToCart(ticket)">
+            <img class="ticket-seat-image" src="../../../assets/filled-car-seat.png" alt="car-seat">
           </div>
-
-          <ng-template #noMoment>
-            <div class="ticket-seat-unavailable">
-              <img class="ticket-seat" src="../../../assets/filled-car-seat.png" alt="car-seat">
-            </div>
-          </ng-template>
         </div>
+
+        <ng-template #ticketUnavailable>
+          <div class="ticket-seat-unavailable ticket-seat-container">
+            <img class="ticket-seat-image" src="../../../assets/filled-car-seat.png" alt="car-seat">
+          </div>
+        </ng-template>
+
       </td>
     </tr>
   </tbody>
